@@ -26,7 +26,8 @@ number of copies in each branch, etc.
 
 **2 - Consider the following schema for Order Database:**  
 
-```
+
+```sql
 CREATE TABLE SALESMAN(Salesman_id, Name, City, Commission)
 CREATE TABLE CUSTOMER(Customer_id, Cust_Name, City, Grade, Salesman_id)
 CREATE TABLE ORDERS(Ord_No, Purchase_Amt, Ord_Date, Customer_id, Salesman_id)
@@ -49,7 +50,7 @@ his orders must also be deleted.
 
 **3 - Consider the schema for Movie Database:**  
 
-```
+```sql
 CREATE TABLE ACTOR(Act_id, Act_Name, Act_Gender)
 CREATE TABLE DIRECTOR(Dir_id, Dir_Name, Dir_Phone)
 CREATE TABLE MOVIES(Mov_id, Mov_Title, Mov_Year, Mov_Lang, Dir_id)
@@ -71,7 +72,7 @@ and find the highest number of stars that movie received. Sort the result by mov
 
 **4 - Consider the schema for College Database:**  
 
-```
+```sql
 CREATE TABLE STUDENT(USN, SName, Address, Phone, Gender)
 CREATE TABLE SEMSEC(SSID, Sem, Sec)
 CREATE TABLE CLASS(USN, SSID)
@@ -97,7 +98,7 @@ _Write SQL queries to_
 
 **5 - Consider the schema for Company Database:**    
 
-```
+```sql
 CREATE TABLE EMPLOYEE(SSN, Name, Address, Sex, Salary, SuperSSN, DNo)
 CREATE TABLE DEPARTMENT(DNo, DName, MgrSSN, MgrStartDate)
 CREATE TABLE DLOCATION(DNo,DLoc)
