@@ -84,7 +84,7 @@ CREATE TABLE IAMARKS(USN, Subcode, SSID, Test1, Test2, Test3, FinalIA)
 _Write SQL queries to_
 
 ```
-1.	List all the student details studying in fourth semester ‘C’ section.   
+1. List all the student details studying in fourth semester ‘C’ section.   
 2. Compute the total number of male and female students in each semester and in each section.  
 3. Create a view of Test1 marks of student USN ‘1BI15CS101’ in all subjects.  
 4. Calculate the FinalIA (average of best two test marks) and update the corresponding table for all students.  
