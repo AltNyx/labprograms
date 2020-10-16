@@ -8,6 +8,7 @@ public class LeakyBucket {
     static int outputRate, arrivals;
     static int netBucketCount = 0;
     static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.print("Enter number off arrivals: ");
         arrivals = sc.nextInt();
@@ -20,23 +21,25 @@ public class LeakyBucket {
         outputRate = sc.nextInt();
 
         System.out.print("Enter number of packets arrived at each second: ");
-        for(i = 0; i < arrivals; i++) {packets[i] = sc.nextInt();}
+        for (i = 0; i < arrivals; i++) {
+            packets[i] = sc.nextInt();
+        }
 
         System.out.println("--------------------------------------------------------------------------------------");
         System.out.println("Second\tNumPackets\tBucketCount\tStatus\t\tPacketsSent\tNetBucketCount");
         System.out.println("--------------------------------------------------------------------------------------");
-        for(i = 0; i < arrivals; i++) {
-            System.out.print(i+1 + "\t");
+        for (i = 0; i < arrivals; i++) {
+            System.out.print(i + 1 + "\t");
             System.out.print(packets[i] + "\t\t");
             bucketCount = netBucketCount + packets[i];
-            if(bucketCount <= bucketSize) {
+            if (bucketCount <= bucketSize) {
                 printDetails("Accepted");
             } else {
                 bucketCount = netBucketCount;
                 printDetails("Rejected");
             }
         }
-        while(netBucketCount != 0) {
+        while (netBucketCount != 0) {
             System.out.print(++i + "\t");
             bucketCount = netBucketCount;
             System.out.print("-" + "\t\t");
@@ -55,10 +58,10 @@ public class LeakyBucket {
     }
 
     static int sub(int bucketCount, int outputRate) {
-        return (bucketCount > outputRate) ? (bucketCount-outputRate) : 0;
+        return (bucketCount > outputRate) ? (bucketCount - outputRate) : 0;
     }
 
     static int min(int bucketCount, int outputRate) {
-        return (bucketCount < outputRate) ? bucketCount: outputRate;
+        return (bucketCount < outputRate) ? bucketCount : outputRate;
     }
 }
