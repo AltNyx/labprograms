@@ -4,16 +4,16 @@
 
 ```
 1. Implement three nodes point – to – point network with duplex links between them.  
-   Set the queue size, vary the bandwidth and find the number of packets dropped.<br>
+   Set the queue size, vary the bandwidth and find the number of packets dropped.<br/>
 2. Implement transmission of ping messages/trace route over a network topology  
-   consisting of 6 nodes and find the number of packets dropped due to congestion.<br>
+   consisting of 6 nodes and find the number of packets dropped due to congestion.<br/>
 3. Implement an Ethernet LAN using n nodes and set multiple traffic nodes and  
-   plot congestion window for different source / destination.<br>
+   plot congestion window for different source / destination.<br/>
 4. Implement simple ESS and with transmitting nodes in wire-less LAN by simulation  
-   and determine the performance with respect to transmission of packets.<br>
+   and determine the performance with respect to transmission of packets.<br/>
 5. Implement and study the performance of GSM on NS2/NS3 (Using MAC layer) or equivalent environment.
 6. Implement and study the performance of CDMA on NS2/NS3 (Using stack called Call net)  
-   or equivalent environment.<br>
+   or equivalent environment.<br/>
 ```
 
 ## PART B JAVA
