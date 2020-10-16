@@ -24,11 +24,11 @@
 ## JAVA
 
 ```
-7.	Write a program for error detecting code using CRC-CCITT (16- bits).
+7. Write a program for error detecting code using CRC-CCITT (16- bits).
 
 8.	Write a program to find the shortest path between vertices using bellman-ford algorithm.
 
-9.	Using TCP/IP sockets, write a client – server program to make the client send the  
+9.Using TCP/IP sockets, write a client – server program to make the client send the  
    file name and to make the server send back the contents of the requested file if present.  
     
 10. Write a program on datagram socket for client/server to display the messages  
