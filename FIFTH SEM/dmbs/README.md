@@ -5,12 +5,12 @@
 **1. Consider the following schema for a Library Database:**  
 
 ```sql
-BOOK(Book_id, Title, Publisher_Name, Pub_Year)  
-BOOK_AUTHORS(Book_id, Author_Name)  
-PUBLISHER(Name, Address, Phone)  
-BOOK_COPIES(Book_id, Branch_id, No-of_Copies)  
-BOOK_LENDING(Book_id, Branch_id, Card_No, Date_Out, Due_Date)  
-LIBRARY_BRANCH(Branch_id, Branch_Name, Address)  
+CREATE TABLE BOOK(Book_id, Title, Publisher_Name, Pub_Year) 
+CREATE TABLE BOOK_AUTHORS(Book_id, Author_Name)  
+CREATE TABLE PUBLISHER(Name, Address, Phone)  
+CREATE TABLE BOOK_COPIES(Book_id, Branch_id, No-of_Copies)  
+CREATE TABLE BOOK_LENDING(Book_id, Branch_id, Card_No, Date_Out, Due_Date)  
+CREATE TABLE LIBRARY_BRANCH(Branch_id, Branch_Name, Address)  
 ```
 
 _Write SQL queries to_
@@ -26,9 +26,10 @@ number of copies in each branch, etc.
 
 **2 - Consider the following schema for Order Database:**  
 
-```SALESMAN(Salesman_id, Name, City, Commission)
-CUSTOMER(Customer_id, Cust_Name, City, Grade, Salesman_id)
-ORDERS(Ord_No, Purchase_Amt, Ord_Date, Customer_id, Salesman_id)
+```
+CREATE TABLE SALESMAN(Salesman_id, Name, City, Commission)
+CREATE TABLE CUSTOMER(Customer_id, Cust_Name, City, Grade, Salesman_id)
+CREATE TABLE ORDERS(Ord_No, Purchase_Amt, Ord_Date, Customer_id, Salesman_id)
 ```
 
 
@@ -48,11 +49,12 @@ his orders must also be deleted.
 
 **3 - Consider the schema for Movie Database:**  
 
-```ACTOR(Act_id, Act_Name, Act_Gender)
-DIRECTOR(Dir_id, Dir_Name, Dir_Phone)
-MOVIES(Mov_id, Mov_Title, Mov_Year, Mov_Lang, Dir_id)
-MOVIE_CAST(Act_id, Mov_id, Role)
-RATING(Mov_id, Rev_Stars)
+```
+CREATE TABLE ACTOR(Act_id, Act_Name, Act_Gender)
+CREATE TABLE DIRECTOR(Dir_id, Dir_Name, Dir_Phone)
+CREATE TABLE MOVIES(Mov_id, Mov_Title, Mov_Year, Mov_Lang, Dir_id)
+CREATE TABLE MOVIE_CAST(Act_id, Mov_id, Role)
+CREATE TABLE RATING(Mov_id, Rev_Stars)
 ```
 
 
@@ -69,11 +71,12 @@ and find the highest number of stars that movie received. Sort the result by mov
 
 **4 - Consider the schema for College Database:**  
 
-```STUDENT(USN, SName, Address, Phone, Gender)
-SEMSEC(SSID, Sem, Sec)
-CLASS(USN, SSID)
-SUBJECT(Subcode, Title, Sem, Credits)
-IAMARKS(USN, Subcode, SSID, Test1, Test2, Test3, FinalIA)
+```
+CREATE TABLE STUDENT(USN, SName, Address, Phone, Gender)
+CREATE TABLE SEMSEC(SSID, Sem, Sec)
+CREATE TABLE CLASS(USN, SSID)
+CREATE TABLE SUBJECT(Subcode, Title, Sem, Credits)
+CREATE TABLE IAMARKS(USN, Subcode, SSID, Test1, Test2, Test3, FinalIA)
 ```
 
 
@@ -94,11 +97,12 @@ _Write SQL queries to_
 
 **5 - Consider the schema for Company Database:**    
 
-```EMPLOYEE(SSN, Name, Address, Sex, Salary, SuperSSN, DNo)
-DEPARTMENT(DNo, DName, MgrSSN, MgrStartDate)
-DLOCATION(DNo,DLoc)
-PROJECT(PNo, PName, PLocation, DNo)
-WORKS_ON(SSN, PNo, Hours)
+```
+CREATE TABLE EMPLOYEE(SSN, Name, Address, Sex, Salary, SuperSSN, DNo)
+CREATE TABLE DEPARTMENT(DNo, DName, MgrSSN, MgrStartDate)
+CREATE TABLE DLOCATION(DNo,DLoc)
+CREATE TABLE PROJECT(PNo, PName, PLocation, DNo)
+CREATE TABLE WORKS_ON(SSN, PNo, Hours)
 ```
 
 _Write SQL queries to_
