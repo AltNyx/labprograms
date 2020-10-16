@@ -3,6 +3,7 @@
 ## Part A: SQL Programming
 
 1 -  Consider the following schema for a Library Database:  
+
 BOOK(Book_id, Title, Publisher_Name, Pub_Year)  
 BOOK_AUTHORS(Book_id, Author_Name)  
 PUBLISHER(Name, Address, Phone)  
@@ -12,7 +13,7 @@ LIBRARY_BRANCH(Branch_id, Branch_Name, Address)
 
 >Write SQL queries to
 
-```1.	Retrieve details of all books in the library – id, title, name of publisher, authors, number of copies in each branch, etc.
+1.	Retrieve details of all books in the library – id, title, name of publisher, authors, number of copies in each branch, etc.
 
 2.	Get the particulars of borrowers who have borrowed more than 3 books, but from Jan 2017 to Jun 2017.
 
@@ -23,7 +24,8 @@ LIBRARY_BRANCH(Branch_id, Branch_Name, Address)
 5.	Create a view of all books and its number of copies that are currently available in the Library.```
 
 
-2 - Consider the following schema for Order Database:
+2 - Consider the following schema for Order Database:  
+
 SALESMAN(Salesman_id, Name, City, Commission)
 CUSTOMER(Customer_id, Cust_Name, City, Grade, Salesman_id)
 ORDERS(Ord_No, Purchase_Amt, Ord_Date, Customer_id, Salesman_id)
@@ -44,7 +46,8 @@ order of a day.
 his orders must also be deleted.
 
 
-3 - Consider the schema for Movie Database:
+3 - Consider the schema for Movie Database:  
+
 ACTOR(Act_id, Act_Name, Act_Gender)
 DIRECTOR(Dir_id, Dir_Name, Dir_Phone)
 MOVIES(Mov_id, Mov_Title, Mov_Year, Mov_Lang, Dir_id)
@@ -64,7 +67,8 @@ Write SQL queries to
 5. Update rating of all movies directed by ‘Steven Spielberg’ to 5.
 
 
-4 - Consider the schema for College Database:
+4 - Consider the schema for College Database:  
+
 STUDENT(USN, SName, Address, Phone, Gender)
 SEMSEC(SSID, Sem, Sec)
 CLASS(USN, SSID)
@@ -88,7 +92,8 @@ If FinalIA< 12 then CAT = ‘Weak’
 Give these details only for 8th semester A,B, and C section students.
 
 
-5 - Consider the schema for Company Database:
+5 - Consider the schema for Company Database:  
+
 EMPLOYEE(SSN, Name, Address, Sex, Salary, SuperSSN, DNo)
 DEPARTMENT(DNo, DName, MgrSSN, MgrStartDate)
 DLOCATION(DNo,DLoc)
