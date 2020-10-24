@@ -1,4 +1,4 @@
 # lab
 Lab programs from every semester
 
-[DATA STRUCTURES](THIRD%SEM/C)
+[DATA STRUCTURES](THIRD%20SEM/C)
