@@ -41,9 +41,9 @@ public class Crc {
         int n = M.length;
         int m = G.length;
         int[] data = new int[n+m];
-        System.arraycopy(M, 0, data, 0, M.length);
+        System.arraycopy(M, 0, data, 0, n);
         int[] R = new int[m];
-        System.arraycopy(data, 0, R, 0, G.length);
+        System.arraycopy(data, 0, R, 0, m);
 
         for(int i = 0; i < n; i++) {
             int MSB = R[0];
@@ -60,7 +60,7 @@ public class Crc {
         int[] R = generate(RD, G);
         for(int i = 0; i < R.length; i++) {
             if(R[i] != 0) {
-                System.out.println("The is an ERROR in the data recieved!");
+                System.out.println("Threre is an ERROR in the data recieved!");
                 return;
             }
         }
