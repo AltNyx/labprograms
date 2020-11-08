@@ -60,7 +60,7 @@ public class Crc {
         int[] R = generate(RD, G);
         for(int i = 0; i < R.length; i++) {
             if(R[i] != 0) {
-                System.out.println("Threre is an ERROR in the data recieved!");
+                System.out.println("There is an ERROR in the data recieved!");
                 return;
             }
         }
