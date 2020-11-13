@@ -1,5 +1,5 @@
 # lab
-Lab programs from every semester
+VTU lab programs from every semester.
 
 ## THIRD SEM
 [DATA STRUCTURES](./THIRD%20SEM/C)
