@@ -1,7 +1,7 @@
-## Graph
-
-![](output/graph.png)
-
-## Packets Dropped
+## NS and AWK
 
 ![](output/packets_dropped.png)
+
+## NAM
+
+![](output/graph.png)
