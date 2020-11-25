@@ -4,11 +4,9 @@ BEGIN {
     pktDropsRtr2 = 0;
 }
 {
-    if($1=="d" && $3=="2") {
-        pktDropsRtr1++;
-    }
-    if($1=="d" && $3=="3") {
-        pktDropsRtr2++;
+    if($1=="d") {
+        if($3=="2") {pktDropsRtr1++;}
+        if($3=="3") {pktDropsRtr2++;}
     }
 }
 END {
