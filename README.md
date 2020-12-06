@@ -2,14 +2,14 @@
 VTU lab programs from every semester.
 
 ## THIRD SEM
-[DATA STRUCTURES](./THIRD%20SEM/C)
+[Data Structures](./THIRD%20SEM/C)
 
 ## FOURTH SEM
-[DESIGN AND ANALYSIS OF ALGORITHMS](./FOURTH%20SEM/DAA)  
+[Design and analysis of algorithms](./FOURTH%20SEM/DAA)  
 
-[MICROCONTROLLER AND EMBEDDED SYSTEMS](./FOURTH%20SEM/MCES)
+[Microcontroller and embedded systems](./FOURTH%20SEM/MCES)
 
 ## FIFTH SEM
-[COMPUTER NETWORKS](./FIFTH%20SEM/CNS)  
+[Computer networks](./FIFTH%20SEM/CNS)  
 
-[DATABASE MANAGEMENT SYSTEM](./FIFTH%20SEM/DBMS)
+[Database management systems](./FIFTH%20SEM/DBMS)
