@@ -1,48 +1,44 @@
-package prog1;
+// Reference Java Docs
+// https://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html#later
 
 import java.io.BufferedReader;
-import java.io.InputStream;
+import java.io.IOException;
 import java.net.Socket;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 
-/**
- * TcpClient
- */
-public class TcpClient {
-
-    public static void main(String[] args) throws Exception {
+public class TCPClient {
+    public static void main(String[] args) throws IOException {
+        int port = 4444;
         String host = "127.0.0.1";
-        int port = 4001;
+        
+        // Create a socket and connect to specified port number on the named host
+        Socket clientSocket = new Socket(host, port);
 
-        // Create Socket
-        Socket socket = new Socket(host, port);
+        // Standart input reader
+        BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter the filename: ");
+        String filename = stdIn.readLine();
 
-        // Read file name
-        BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter the filename: ");
-        String fileName = bReader.readLine();
+        // Get the input and output streams of client socket 
+        // and open readers and writers on them
+        PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+        BufferedReader in =  new BufferedReader(
+            new InputStreamReader(clientSocket.getInputStream()));
+        
+        // Write the filename to the output stream
+        out.println(filename);
 
-        // Send the filename to server
-        OutputStream oStream = socket.getOutputStream();
-        PrintWriter pWriter = new PrintWriter(oStream, true);
-        pWriter.println(fileName);
-
-        // Recieving the contents of the file from the server
-        InputStream iStream = socket.getInputStream();
-        BufferedReader socketRead = new BufferedReader(new InputStreamReader(iStream));
-
-        // Read and print the contents of file
-        System.out.println("The file contents are: \n");
+        // Read the contents from the input stream
+        System.out.println("The contents of the file are: \n");
         String content;
-        while ((content = socketRead.readLine()) != null) {
+        while ((content = in.readLine()) != null) {
             System.out.println(content);
         }
 
-        // Close all
-        pWriter.close();
-        socket.close();
-        bReader.close();
+        clientSocket.close();
+        stdIn.close();
+        out.close();
+        in.close();
     }
 }
