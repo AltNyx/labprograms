@@ -1,15 +1,13 @@
-# lab
+# labprograms
+
 VTU lab programs from every semester.
 
-## THIRD SEM
-[Data Structures](./THIRD%20SEM/C)
+## CONTENT
 
-## FOURTH SEM
-[Design and analysis of algorithms](./FOURTH%20SEM/DAA)  
-
-[Microcontroller and embedded systems](./FOURTH%20SEM/MCES)
-
-## FIFTH SEM
-[Computer networks](./FIFTH%20SEM/CNS)  
-
-[Database management systems](./FIFTH%20SEM/DBMS)
+| SEMESTER | SUBJECT                                                 |
+| :------- | :------------------------------------------------------ |
+| III SEM  | [DATA STRUCTURES](./III%20SEM/C)                        |
+| IV SEM   | [DESIGN AND ANALYSIS OF ALGORITHMS](./IV%20SEM/DAA)     |
+| IV SEM   | [MICROCONTROLLER AND EMBEDDED SYSTEMS](./IV%20SEM/MCES) |
+| V SEM    | [COMPUTER NETWORKS](./V%20SEM/CNS)                      |
+| V SEM    | [DATABASE MANAGEMENT SYSTEM](./V%20SEM/DBMS)            |

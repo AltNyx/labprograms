@@ -1,15 +1,10 @@
-package prog6;
-
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// Creating a custom class for edges
 class Edge {
-    int src;
-    int dest;
-    int weight;
+    int src, dest, weight;
 
     Edge(int src, int dest, int weight) {
         this.src = src;
@@ -18,7 +13,7 @@ class Edge {
     }
 }
 
-public class Bellmanford {
+public class BellmanFord {
     static int V, E, source;
     static List<Edge> edges = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);

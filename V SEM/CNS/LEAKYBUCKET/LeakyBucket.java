@@ -1,5 +1,3 @@
-package prog5;
-
 import java.util.Scanner;
 
 public class LeakyBucket {
@@ -28,28 +26,28 @@ public class LeakyBucket {
         System.out.println("--------------------------------------------------------------------------------------");
         System.out.println("Second\tNumPackets\tBucketCount\tStatus\t\tPacketsSent\tNetBucketCount");
         System.out.println("--------------------------------------------------------------------------------------");
+        
         for (i = 0; i < arrivals; i++) {
-            System.out.print(i + 1 + "\t");
-            System.out.print(packets[i] + "\t\t");
             bucketCount = netBucketCount + packets[i];
             if (bucketCount <= bucketSize) {
-                printDetails("Accepted");
+                printDetails(i, packets[i], "Accepted");
             } else {
                 bucketCount = netBucketCount;
-                printDetails("Rejected");
+                printDetails(i, packets[i], "Rejected");
             }
         }
+        
         while (netBucketCount != 0) {
-            System.out.print(++i + "\t");
             bucketCount = netBucketCount;
-            System.out.print("-" + "\t\t");
-            printDetails("Accepted");
+            printDetails(++i, 0, "Accepted");
         }
         System.out.println("--------------------------------------------------------------------------------------");
         sc.close();
     }
 
-    static void printDetails(String status) {
+    static void printDetails(int interval, int numPackets, String status) {
+        System.out.print(interval + "\t");
+        System.out.print(numPackets + "\t\t");
         System.out.print(bucketCount + "\t\t");
         System.out.print(status + "\t");
         System.out.print(min(bucketCount, outputRate) + "\t\t");
