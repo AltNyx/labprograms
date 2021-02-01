@@ -26,7 +26,7 @@ public class LeakyBucket {
         System.out.println("--------------------------------------------------------------------------------------");
         System.out.println("Second\tNumPackets\tBucketCount\tStatus\t\tPacketsSent\tNetBucketCount");
         System.out.println("--------------------------------------------------------------------------------------");
-        
+
         for (i = 0; i < arrivals; i++) {
             bucketCount = netBucketCount + packets[i];
             if (bucketCount <= bucketSize) {
@@ -36,7 +36,7 @@ public class LeakyBucket {
                 printDetails(i, packets[i], "Rejected");
             }
         }
-        
+
         while (netBucketCount != 0) {
             bucketCount = netBucketCount;
             printDetails(++i, 0, "Accepted");

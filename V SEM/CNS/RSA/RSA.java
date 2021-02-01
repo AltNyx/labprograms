@@ -15,12 +15,12 @@ public class RSA {
         q = new BigInteger(bitLength / 2, 100, r); // prime q
         n = p.multiply(q); // n = p*q
         phi = p.subtract(one).multiply(q.subtract(one)); // phi = (p-1)*(q-1)
-        
+
         e = new BigInteger(bitLength / 2, 100, r); // 1 < e < phi and gcd(e, phi) = 1
         while (phi.gcd(e).compareTo(one) > 0 && e.compareTo(phi) < 0) {
             e.add(one);
         }
-        
+
         d = e.modInverse(phi); // d*e = 1 mod (phi(n)) [Private key]
     }
 
@@ -45,7 +45,7 @@ public class RSA {
         RSA rsa = new RSA();
         rsa.printValues();
         Scanner sc = new Scanner(System.in);
-        
+
         // Reading plain text
         System.out.print("\nEnter plain text: ");
         String plainText = sc.nextLine();
