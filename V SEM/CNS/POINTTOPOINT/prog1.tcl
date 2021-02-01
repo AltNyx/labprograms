@@ -38,9 +38,9 @@ $ns duplex-link $n1 $n2 10Mb 300ms DropTail
 $ns duplex-link $n2 $n3 1Mb 300ms DropTail
 
 # Set the queue size
-$ns set queue-limit $n0 $n2 10
-$ns set queue-limit $n1 $n2 10
-$ns set queue-limit $n2 $n3 5
+$ns queue-limit $n0 $n2 10
+$ns queue-limit $n1 $n2 10
+$ns queue-limit $n2 $n3 5
 
 # Attach an udp agent to nodes n0 and n1 and null agent to n3
 set udp0 [new Agent/UDP]
@@ -64,8 +64,8 @@ $udp1 set class_ 2
 $ns connect $udp0 $null3
 $ns connect $udp1 $null3
 
-# set packet size to 500Mb
-$cbr1 set packetSize_ 500Mb
+# set packet size to 500
+$cbr1 set packetSize_ 500
 
 # set interval for the packets
 $cbr1 set interval_ 0.005
