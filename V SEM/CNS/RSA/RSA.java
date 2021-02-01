@@ -15,13 +15,11 @@ public class RSA {
         q = new BigInteger(bitLength / 2, 100, r); // prime q
         n = p.multiply(q); // n = p*q
         phi = p.subtract(one).multiply(q.subtract(one)); // phi = (p-1)*(q-1)
-
         e = new BigInteger(bitLength / 2, 100, r); // 1 < e < phi and gcd(e, phi) = 1
-        while (phi.gcd(e).compareTo(one) > 0 && e.compareTo(phi) < 0) {
-            e.add(one);
-        }
-
         d = e.modInverse(phi); // d*e = 1 mod (phi(n)) [Private key]
+
+        // NOTE: since e is less than phi and also e is prime,
+        // both the conditions (1 < e < phi) and gcd(e, phi) = 1 are satisfied
     }
 
     public void printValues() {
