@@ -19,7 +19,7 @@ set n6 [$ns node]
 $ns duplex-link $n0 $n2 100Mb 300ms DropTail
 $ns duplex-link $n2 $n6 1Mb 300ms DropTail
 $ns duplex-link $n5 $n2 100Mb 300ms DropTail
-$ns duplex-link $n2 $n4 1Mb 300ms DropTail
+$ns duplex-link $n4 $n2 1Mb 300ms DropTail
 $ns duplex-link $n3 $n2 1Mb 300ms DropTail
 $ns duplex-link $n1 $n2 1Mb 300ms DropTail
 
