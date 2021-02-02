@@ -4,75 +4,77 @@ public class CRC {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Generator or divisor
-        int[] GEN = { 1, 1, 0, 0, 1 };
-        int m = GEN.length;
+        int[] divisor = { 1, 1, 0, 0, 1 };
+        int m = divisor.length;
 
-        // Read the message
         System.out.print("Enter number of message bits: ");
         int n = sc.nextInt();
-        int[] MSG = new int[n];
+        int[] message = new int[n];
+
         System.out.print("Enter the message bits: ");
         for (int i = 0; i < n; i++)
-            MSG[i] = sc.nextInt();
+            message[i] = sc.nextInt();
 
-        // Evaluate the remainder
-        int[] REM = generate(MSG, GEN);
+        int[] remainder = generate(message, divisor);
 
         System.out.print("The remainder is: ");
         for (int i = 0; i < m - 1; i++)
-            System.out.print(REM[i]);
+            System.out.print(remainder[i]);
 
         System.out.print("\nThe CRC code is: ");
         for (int i = 0; i < n; i++)
-            System.out.print(MSG[i]);
+            System.out.print(message[i]);
         for (int i = 0; i < m - 1; i++)
-            System.out.print(REM[i]);
+            System.out.print(remainder[i]);
 
-        // Read the recieved data
-        int[] RD = new int[n + m - 1];
-        System.out.print("\nEnter the data recieved: ");
+        int[] recievedData = new int[n + m - 1];
+        System.out.print("\nEnter the recieved data: ");
         for (int i = 0; i < n + m - 1; i++)
-            RD[i] = sc.nextInt();
+            recievedData[i] = sc.nextInt();
 
-        // Verify the recieved data
-        verify(RD, GEN);
+        if (verify(recievedData, divisor)) {
+            System.out.println("No error in recieved data!");
+        } else {
+            System.out.println("ERROR in recived data!");
+        }
+
         sc.close();
+
     }
 
-    static int[] generate(int[] MSG, int[] GEN) {
-        int n = MSG.length;
-        int m = GEN.length;
+    static int[] generate(int[] message, int[] divisor) {
+        int n = message.length;
+        int m = divisor.length;
 
-        int[] data = new int[n + m];
-        System.arraycopy(MSG, 0, data, 0, n);
-        int[] REM = new int[m];
-        System.arraycopy(data, 0, REM, 0, m);
+        int[] divident = new int[n + m];
+        System.arraycopy(message, 0, divident, 0, n);
+        // divident -> message appended with m-1 zeroes
+
+        int[] remainder = new int[m];
+        System.arraycopy(divident, 0, remainder, 0, m);
 
         for (int i = 0; i < n; i++) {
-            int MSB = REM[0];
-
-            if (MSB == 1) {
+            int msb = remainder[0];
+            if (msb == 0) {
                 for (int j = 1; j < m; j++)
-                    REM[j - 1] = REM[j] ^ GEN[j];
+                    remainder[j - 1] = remainder[j];
             } else {
                 for (int j = 1; j < m; j++)
-                    REM[j - 1] = REM[j] ^ 0;
+                    remainder[j - 1] = remainder[j] ^ divisor[j];
             }
 
-            REM[m - 1] = data[i + m];
+            remainder[m - 1] = divident[i + m];
         }
-        return REM;
+
+        return remainder;
     }
 
-    static void verify(int[] RD, int[] GEN) {
-        int[] REM = generate(RD, GEN);
-        for (int i = 0; i < REM.length; i++) {
-            if (REM[i] != 0) {
-                System.out.println("There is an ERROR in the data recieved!");
-                return;
-            }
+    static boolean verify(int[] recievedData, int[] divisor) {
+        int[] remainder = generate(recievedData, divisor);
+        for (int i = 0; i < remainder.length - 1; i++) {
+            if (remainder[i] == 1)
+                return false;
         }
-        System.out.println("NO error in recieved data!");
+        return true;
     }
 }
