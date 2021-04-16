@@ -1,4 +1,4 @@
-# labprograms
+# LabPrograms
 
 VTU lab programs from every semester.
 
