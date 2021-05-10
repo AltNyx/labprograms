@@ -128,10 +128,12 @@ void search()
         {
             cout << "Match Found!" << endl;
             display(students[i]);
+            f.close();
             return;
         }
     }
 
+    f.close();
     cout << "Match not found!" << endl;
 }
 
@@ -163,7 +165,7 @@ int main()
         case '4':
             return 0;
         default:
-            cout << "Invalid choice!" << endl;
+            cout << "\nInvalid choice!" << endl;
         }
     }
 
