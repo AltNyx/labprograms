@@ -8,11 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Button zero, one, two, three;
-    Button four, five, six, seven;
-    Button eight, nine, add, sub;
-    Button mul, div, clear;
-    Button equal;
+    Button zero, one, two, three, four, five, six, seven, eight, nine;
+    Button add, sub, mul, div, mod, pow;
+    Button clear, equal, dot;
 
     TextView input;
 
@@ -40,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         sub = (Button)findViewById(R.id.sub);
         mul = (Button)findViewById(R.id.mul);
         div = (Button)findViewById(R.id.div);
+        mod = (Button)findViewById(R.id.mod);
+        pow = (Button)findViewById(R.id.pow);
+        dot = (Button)findViewById(R.id.dot);
         clear = (Button)findViewById(R.id.clear);
         equal = (Button)findViewById(R.id.equal);
         input = (TextView)findViewById(R.id.input);
@@ -55,12 +56,15 @@ public class MainActivity extends AppCompatActivity {
         seven.setOnClickListener(this::setValue);
         eight.setOnClickListener(this::setValue);
         nine.setOnClickListener(this::setValue);
+        dot.setOnClickListener(this::setValue);
 
         // Event listener for operators
         add.setOnClickListener(this::setOperator);
         sub.setOnClickListener(this::setOperator);
         mul.setOnClickListener(this::setOperator);
         div.setOnClickListener(this::setOperator);
+        mod.setOnClickListener(this::setOperator);
+        pow.setOnClickListener(this::setOperator);
 
         // Event listener for AC
         clear.setOnClickListener(this::clearAll);
