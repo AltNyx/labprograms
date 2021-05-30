@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string.h>
 
 using namespace std;
 
@@ -10,14 +11,18 @@ public:
 };
 
 Student students[20];
+Student s;
+fstream f;
+
 string filename = "students.txt";
+
 int numRecords = 0;
 char buffer[100];
-fstream f;
 const char *delimeter = "|";
 
+// FUNCTIONS
 // Write student record to file
-void pack(Student student)
+void pack(Student &student)
 {
     f.open(filename, ios::out | ios::app);
     const char *RRN = to_string(numRecords).c_str();
@@ -40,30 +45,22 @@ void pack(Student student)
 }
 
 // Read student data and return Student object
-Student read()
+void read(Student &student)
 {
-    Student student;
-
     cout << "Enter the fname: ";
     cin >> student.fname;
-
     cout << "Enter the lname: ";
     cin >> student.lname;
-
     cout << "Enter the USN: ";
     cin >> student.usn;
-
     cout << "Enter the sem: ";
     cin >> student.sem;
-
     cout << "Enter the branch: ";
     cin >> student.branch;
-
-    return student;
 }
 
 // Display student data
-void display(Student student)
+void display(Student &student)
 {
     cout << student.fname << "\t";
     cout << student.lname << "\t";
@@ -72,8 +69,7 @@ void display(Student student)
     cout << student.branch << endl;
 }
 
-// Unpack student records from file
-void unpack()
+void displayAll()
 {
     if (numRecords == 0)
     {
@@ -81,25 +77,30 @@ void unpack()
         return;
     }
 
-    f.open(filename, ios::in);
-    char RRN[10];
-
     cout << "\nStudent records are:" << endl;
     cout << "Fname\tLname\tUSN\tSem\tBranch" << endl;
+
+    for (int i = 0; i < numRecords; i++)
+        display(students[i]);
+}
+
+// Unpack student records from file
+void unpack()
+{
+    f.open(filename, ios::in);
+    char RRN[10];
 
     for (int i = 0; i < numRecords; i++)
     {
         f.getline(buffer, 100);
         sscanf(buffer,
-               "%[^|]|%[^|]|%[^|]|%[^|]|%[^|]|%[^|]|", // Read all 5 fields using RE
+               "%[^|]|%[^|]|%[^|]|%[^|]|%[^|]|%[^|]|", // Read all 6 fields using RE
                RRN,
                students[i].fname,
                students[i].lname,
                students[i].usn,
                students[i].sem,
                students[i].branch);
-
-        display(students[i]);
     }
 
     f.close();
@@ -109,7 +110,7 @@ void search()
 {
     f.open(filename, ios::in);
     char searchRRN[10], RRN[10]; // Treat input number as char instead of int. Avoid conversions
-    cout << "Enter the RRN value to search:" << endl;
+    cout << "Enter the RRN value to search: ";
     cin >> searchRRN;
 
     for (int i = 0; i < numRecords; i++)
@@ -154,10 +155,12 @@ int main()
         {
         case '1':
             numRecords++;
-            pack(read());
+            read(s);
+            pack(s);
             break;
         case '2':
             unpack();
+            displayAll();
             break;
         case '3':
             search();
