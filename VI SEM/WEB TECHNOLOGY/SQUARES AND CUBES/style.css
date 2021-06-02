@@ -1,0 +1,24 @@
+tr,
+td,
+th {
+	border: 2px solid black;
+	padding: 5px;
+}
+
+table {
+	font-size: larger;
+	font-family: "calibri";
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+th {
+	background-color: #011e29;
+	color: white;
+}
+
+td {
+	background-color: #124559;
+	color: white;
+}

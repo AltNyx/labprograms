@@ -1,0 +1,39 @@
+* {
+	display: block;
+	font-size: 20px;
+	margin: 5px;
+}
+
+student {
+	margin: 30px;
+	border: 2px solid black;
+	width: 200px;
+}
+
+heading {
+	margin: 30px;
+}
+
+usn {
+	color: brown;
+}
+
+name {
+	color: royalblue;
+}
+
+college {
+	color: goldenrod;
+}
+
+branch {
+	color: green;
+}
+
+year {
+	color: blueviolet;
+}
+
+email {
+	color: red;
+}

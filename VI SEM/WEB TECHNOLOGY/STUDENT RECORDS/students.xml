@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="styles.css"?>
+
+<students>
+  <heading>STUDENTS DESCRIPTION</heading>
+  <student>
+    <usn>1CR18IS700</usn>
+    <name>MARK</name>
+    <college>CMRIT</college>
+    <branch>CSE</branch>
+    <year>2018</year>
+    <email>mark@cmrit.ac.in</email>
+  </student>
+
+  <student>
+    <usn>1CR18IS800</usn>
+    <name>LUCAS</name>
+    <college>CMRIT</college>
+    <branch>ISE</branch>
+    <year>2018</year>
+    <email>lucas@cmrit.ac.in</email>
+  </student>
+
+  <student>
+    <usn>1CR18IS900</usn>
+    <name>BILL</name>
+    <college>CMRIT</college>
+    <branch>ISE</branch>
+    <year>2018</year>
+    <email>bill@cmrit.ac.in</email>
+  </student>
+</students>
