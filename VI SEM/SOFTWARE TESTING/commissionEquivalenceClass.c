@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main()
 {
     int locks, stocks, barrels;
+    bool check1, check2, check3;
     float commission;
 
     float lockPrice = 45.0;
@@ -17,6 +19,10 @@ int main()
     int tstocks = 0;
     int tbarrels = 0;
 
+    int maxLocks = 70;
+    int maxStocks = 80;
+    int maxBarrels = 90;
+
     while (1)
     {
         printf("Enter the number of locks (Type -1 to exit): ");
@@ -29,6 +35,32 @@ int main()
         tlocks += locks;
         tstocks += stocks;
         tbarrels += barrels;
+
+        check1 = (locks <= 0 || tlocks > maxLocks);
+        check2 = (stocks <= 0 || tstocks > maxStocks);
+        check3 = (barrels <= 0 || tbarrels > maxBarrels);
+
+        if (check1)
+        {
+            printf("Total locks not in range [1, %d]\n", maxLocks);
+            tlocks -= locks;
+        }
+
+        if (check2)
+        {
+            printf("Total stocks not in range [1, %d]\n", maxStocks);
+            tstocks -= stocks;
+        }
+
+        if (check3)
+        {
+            printf("Total barrels not in range [1, %d]\n", maxBarrels);
+            tbarrels -= barrels;
+        }
+
+        printf("Locks sold: %d\n", tlocks);
+        printf("Stocks sold: %d\n", tstocks);
+        printf("Barrels sold: %d\n", tbarrels);
     }
 
     printf("Total locks sold: %d\n", tlocks);

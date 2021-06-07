@@ -1,9 +1,27 @@
 #include <stdio.h>
 
+float min(float num1, float num2)
+{
+    return num1 < num2 ? num1 : num2;
+}
+
+float max(float num1, float num2)
+{
+    return num1 > num2 ? num1 : num2;
+}
+
+float calculateCommission(float sales)
+{
+    float comm = 0;
+    comm += 0.1 * min(1000, sales);
+    comm += 0.15 * min(800, max(0, sales - 1000));
+    comm += 0.20 * max(0, sales - 1800);
+    return comm;
+}
+
 int main()
 {
     int locks, stocks, barrels;
-    float commission;
 
     float lockPrice = 45.0;
     float stockPrice = 30.0;
@@ -40,20 +58,7 @@ int main()
     float barrelSales = barrelPrice * tbarrels;
     float totalSales = lockSales + stockSales + barrelSales;
 
-    if (totalSales > 1800.0)
-    {
-        commission = (0.10 * 1000.0) + (0.15 * 800) + (0.20 * (totalSales - 1800));
-    }
-    else if (totalSales > 1000.0)
-    {
-        commission = (0.10 * 1000) + (0.15 * (totalSales - 1000));
-    }
-    else
-    {
-        commission = 0.10 * totalSales;
-    }
-
     printf("Total sales: %f\n", totalSales);
-    printf("Total commission: %f\n", commission);
+    printf("Total commission: %f\n", calculateCommission(totalSales));
     return 0;
 }
