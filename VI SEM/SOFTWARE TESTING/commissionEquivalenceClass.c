@@ -84,7 +84,6 @@ int main()
     {
         commission = 0.10 * totalSales;
     }
-
     printf("Total sales: %f\n", totalSales);
     printf("Total commission: %f\n", commission);
     return 0;
