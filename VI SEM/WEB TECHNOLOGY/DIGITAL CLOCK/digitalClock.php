@@ -1,4 +1,3 @@
-
 <head>
 	<style>
 		body {
@@ -23,8 +22,8 @@
 			font-style: italic;
 		}
 	</style>
-    <meta http-equiv="refresh" content="1">
+    	<meta http-equiv="refresh" content="1">
 	<?php date_default_timezone_set("Asia/Kolkata"); ?>
-    <p class="clock"><?php echo date("H:i:s");?></p>
+    	<p class="clock"><?php echo date("H:i:s");?></p>
 	<p class="color">Color: <?php echo date("#His");?></p>
 </head>
