@@ -1,0 +1,39 @@
+:root {
+  --background: #3c4043;
+  --primary: white;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  color: var(--background);
+}
+
+#container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  height: 100%;
+  background-color: var(--primary);
+  color: var(--background);
+  border-style: none;
+  border: 2px solid var(--background);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--background);
+  color: var(--primary);
+}
+
+input {
+  height: 30px;
+  align-content: center;
+  text-align: center;
+  border: 2px solid var(--background);
+}
