@@ -24,7 +24,7 @@
         function printArray($states) {
             ksort($states);
             foreach($states as $idx => $value)
-            print("<h4>STATES[$idx] = $value</h4>");
+                print("<h4>STATES[$idx] = $value</h4>");
         }
 
         echo "<br><h1>Original Array</h1><br>";
