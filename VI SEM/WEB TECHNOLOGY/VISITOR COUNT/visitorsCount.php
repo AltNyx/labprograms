@@ -1,22 +1,22 @@
 <body>
 	<style>
 		* {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+		    font-family: Arial, Helvetica, sans-serif;
+		    margin: 0;
+		    padding: 0;
+		}
 
-        h2 {
-			text-align: center;
-            padding: 10px;
-        }
+		h2 {
+		    text-align: center;
+		    padding: 10px;
+		}
 
-        h3 {
-			text-align: center;
-            padding: 10px;
-            font-weight: normal;
-            font-style: italic;
-        }
+		h3 {
+		    text-align: center;
+		    padding: 10px;
+		    font-weight: normal;
+		    font-style: italic;
+		}
 	</style>
 	<?php
 		print("<h2>REFRESH PAGE</h2>");
