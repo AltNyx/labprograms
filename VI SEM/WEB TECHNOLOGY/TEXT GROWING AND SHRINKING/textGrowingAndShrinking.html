@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Text</title>
+</head>
+<body>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #dynamicText {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <div id="dynamicText"></div>
+    <script>
+        let isGrowing = true
+        let fontSize = 10
+        let text = "TEXT GROWING"
+        let color = "red"
+
+        function changeText() {
+            if (isGrowing) fontSize += 5
+            else fontSize -= 5
+
+            let elem = document.getElementById("dynamicText")
+            elem.innerHTML = `<h1 style="font-size: ${fontSize}px; color: ${color}">${text}</h1>`
+            console.log(elem.innerHTML)
+
+            if (fontSize == 50) {
+                isGrowing = false
+                text = "TEXT SHRINKING"
+                color = "blue"
+            }
+
+            if (fontSize == 10) {
+                isGrowing = true
+                text = "TEXT GROWING"
+                color = "red"
+            }
+
+            run()
+        }
+        
+        function run() { setTimeout(changeText, 300) }
+        run()
+    </script>
+</body>
+</html>
