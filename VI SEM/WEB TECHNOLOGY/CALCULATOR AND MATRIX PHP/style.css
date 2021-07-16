@@ -1,0 +1,45 @@
+:root {
+    --background: #3c4043;
+    --primary: white;
+}
+  
+* {
+    margin: 5px;
+    padding: 2px;
+    font-family: "Roboto", sans-serif;
+    font-size: medium;
+    text-align: left;
+    color: var(--background);
+}
+
+table{
+    width: fit-content;
+    margin: auto;
+}
+
+button {
+    display: block;
+    margin: 5px auto;
+    height: 40px;
+    background-color: var(--primary);
+    color: var(--background);
+    border-style: none;
+    border: 2px solid var(--background);
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--background);
+    color: var(--primary);
+}
+
+input {
+    height: 30px;
+    width: 100%;
+    border: 2px solid var(--background);
+}
+
+p {
+    font-size: large;
+}
